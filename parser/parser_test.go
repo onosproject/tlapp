@@ -20,5 +20,5 @@ f(x) == x
 `
 	n, err := sitter.ParseCtx(context.Background(), []byte(module), parser.GetLanguage())
 	assert.NoError(t, err)
-	assert.Equal(t, "(source_file (module (header_line) name: (identifier) (header_line) (extends (identifier_ref (identifier) (identifier) (identifier))) (instance (identifier_ref (identifier) (identifier) (identifier))) (local_definition (module_definition name: (identifier) (def_eq) definition: (instance (identifier_ref (identifier) (identifier))))) (operator_definition name: (identifier) parameter: (identifier) (def_eq) definition: (identifier_ref)) (trailer_line)))", n.String())
+	assert.Equal(t, "(source_file (module name: (identifier) (extends (module_path (identifier) (identifier) (identifier))) (instance (module_path (identifier) (identifier) (identifier))) (local_definition (module_definition name: (identifier) (def_eq) definition: (instance (module_path (identifier) (identifier))))) (operator_definition name: (identifier) parameter: (identifier) (def_eq) definition: (identifier_ref))))", n.String())
 }

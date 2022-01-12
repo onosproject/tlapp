@@ -12,9 +12,9 @@ import (
 func TestGrammar(t *testing.T) {
 	module := `
 ---- MODULE Test ----
-EXTENDS foo.bar.Baz
-INSTANCE foo.bar.Baz
-LOCAL foo == INSTANCE bar.Baz
+EXTENDS foo/bar/Baz
+INSTANCE foo/bar/Baz
+LOCAL foo == INSTANCE bar/Baz
 f(x) == x
 ====
 `
